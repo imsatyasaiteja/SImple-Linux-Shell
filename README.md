@@ -1,4 +1,4 @@
-# SImple-Linux-Shell
+# Simple-Linux-Shell
 I've written a C program that works like a Linux Shell
 
 Code Explanation:
