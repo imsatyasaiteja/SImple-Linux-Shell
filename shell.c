@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -15,8 +14,7 @@ void Cd(char **a);
 int g;
 extern char **environ;
 
-
-// Main Program
+// Main function
 void main()
 {	
 	system("clear");
@@ -35,18 +33,15 @@ void main()
 			break;
 		}
 		ch = getchar();	
-	}	
-	
+	}		
 }
 
-
-// Shell program that takes user input
+// Shell function that takes user input
 void shell()
 {
 	char cmd[100];
 	char **a;
 	char *c = Pwd();
-	
 	
 	printf("\n\nSimpleShell:(%s)$ ",c);
 	scanf("%[^\n]s",cmd);
@@ -76,8 +71,7 @@ void shell()
 	free(a);
 }
 
-
-// Takes the input Command
+// Command function
 void Cmd(char **a)
 {
 	int status;
@@ -99,8 +93,7 @@ void Cmd(char **a)
 	}	
 }
 
-
-// Breaks the input string into multiple strings and stores them in a 2D array
+// Token function
 char **tok(char *cmd, int l)
 {
 	char delim[] = " ";
@@ -112,16 +105,13 @@ char **tok(char *cmd, int l)
 	while(token[g] != 0)
 	{	
 		g++;
-		token[g] = strtok(0, delim);
-		 
-		
+		token[g] = strtok(0, delim);	 
 	}
 
 	return token;
 }	
 
-
-// Echo program
+// Echo function
 void Echo(char **a)
 {
 	char b[100] = "";
@@ -145,22 +135,18 @@ void Echo(char **a)
 		}
 	}
 	
-	printf("%s\n",b);
-	
+	printf("%s\n",b);	
 }
 
-
-// Pwd program
+// Pwd function
 char *Pwd()
 {	
 	char *c = malloc(100*sizeof(char *));
-	getcwd(c, 100);
-	
+	getcwd(c, 100);	
 	return c;
 }
 
-
-// Cd program
+// Cd function
 void Cd(char **a)
 {	
 	char *t;
@@ -174,8 +160,5 @@ void Cd(char **a)
 		chdir(a[1]);
 		t = Pwd();
 		printf("directory changed to %s\n",t);
-	}
-	
-	
+	}	
 }
-
