@@ -1,12 +1,12 @@
 # Simple-Linux-Shell
 I've written a C program that works like a Linux Shell
 
-Code Explanation:
+Code Explanation :
 
         The Main function contains a while loop.
         We need this loop to run the shell() function after execution of each command.
 
-        The shell() function does the following job:
+        The shell() function does the following job :
 	        It stores the user input in the character array cmd[100] (string).
 	        length of this string cmd is stored in l.
         
@@ -33,3 +33,37 @@ Code Explanation:
 	        After leaving the if else loop and executing one of the Cd(), Pwd(), Echo(), Cmd() functions, the array a memory is freed.
         Because we have a while loop in our Main function and it breaks only when character ch != '\n'.
         At each step, it calls the shell() function again.
+
+
+Output Images :
+
+
+1) cat, date commands
+
+![cat,date](https://user-images.githubusercontent.com/85508314/208363790-8ec1230a-253c-447b-a0a1-66e264c731a4.png)
+
+
+2) cd command
+
+![cd](https://user-images.githubusercontent.com/85508314/208364013-62668cbb-6f9d-4f6f-aec1-f04ea5f400e7.png)
+
+
+3) echo, pwd commands
+
+![echo,pwd](https://user-images.githubusercontent.com/85508314/208364073-0e444897-ff37-4a09-a9bd-64215e55bee3.png)
+
+
+4) ls command
+
+![ls](https://user-images.githubusercontent.com/85508314/208364117-bb895734-e684-4b37-8394-8bc78c81ebb5.png)
+
+
+5) mkdir command
+
+![mkdir](https://user-images.githubusercontent.com/85508314/208364161-f1ff1fb9-ee89-4c80-9871-3b4d4e9802d5.png)
+
+
+6) rm command
+
+![rm](https://user-images.githubusercontent.com/85508314/208364190-c3c16281-7eef-4a7e-acea-2c5a41a1d9bf.png)
+
