@@ -1,68 +1,36 @@
-# Simple Linux Shell
+## Simple Linux Shell
 
-I've written a C program that works like a Linux Shell
+Hey! Here's a Command Line Interface application I've written in C language that works like a Linux shell
 
-## Code Explanation :
+### Code Explanation
+- The _main( )_ function executes a _while_ loop
+We need this loop to run the shell input command infinitely after execution of each command
+- The _shell_ function does the following job :
+  - It stores the user input in the character array _cmd[100]_ (string)
+  - length of this string _cmd_ is stored in _l_
+- We pass this string cmd and its length _l_ to a token function _tok(cmd,l)_
+- The _tok(cmd, l)_ function's return type is a 2D array (an array of strings)
+  - This function takes the _cmd_ string and tokenizes it into a group of strings
+  - A global variable _g_ is used to store the number of tokens obtained
+- The array of strings returned by token function is stored in _a_
+- Now, we compare the first token _a[0]_ given by the user with _cd, echo, pwd_, If the token matches with any one of them, its respective function is called :
+  - _Cd(a)_ function uses _chdir(a[1])_, an in-built function to change the directory
+  - _Echo(a)_ function concats all the tokens from _a[1]_ to _a[g-1]_ and stores in a string _b_
+  - A _for_ loop is used to remove _"_ character
+  - _Pwd( )_ function uses _getcwd( )_, an in-built function to get the current working directory
+  - _Cmd(a)_ function is used to access commands like _mkdir, ls, cat, rm, date_ executables in the bin folder using **_execvp( )_**
+	- In this _Cmd(a)_ function, **_fork( )_** function is used to initialize a child process
+	- In the child process execvp is used. Its return value is stored in a variable z
+	- If _z != 0_, It displays an error
+	- _execvp_ takes the input command and the array of strings as arguments
+	- _execvp_ function calls the file from bin folder according to the user input
+	- Meanwhile, the parent process waits for the child process to exit             
+- After leaving the _if-else_ loop and executing one of the _Cd( ), Pwd( ), Echo( ), Cmd( )_ functions, the array a memory is freed
+- Because we have a _while_ loop in our Main function and it breaks only when character _ch != '\n'_
+- At each step, it calls the shell function again
 
-- The Main function contains a while loop.
-We need this loop to run the function after execution of each command.
+### Preview
+Here are some important Linux commands that I've tested on my Linux shell application
 
-- The shell function does the following job :
-	1) It stores the user input in the character array cmd[100] (string).
-	2) length of this string cmd is stored in l.
-        
-- We pass this string cmd and its length l to a token function tok(cmd,l).
-- The tok(cmd, l) function's return type is a 2D array (an array of strings).
-	1) This function takes the cmd string and tokenizes it into a group of strings.
-	2) A global variable g is used to store the number of tokens obtained.
-- The array of strings returned by token function is stored in a.
-- Now, we compare the first token a[0] given by the user with cd, echo, pwd. if the token matches with any one of them, its respective function is called :
-	1) Cd(a) function uses chdir(a[1]), an in-built function to change the directory.
-	2) Echo(a) function concats all the tokens from a[1] to a[g-1] and stores in a string b
-	3) A for loop is used to remove " character. 
-	4) Pwd() function uses getcwd(), an in-built function to get the current working directory.
-	5) Cmd(a) function is used to access commands like mkdir, ls, cat, rm, date executables in the bin folder using execvp().
-		- In this Cmd(a) function, fork() function is used to initialize a child process.
-		- In the child process execvp is used. Its return value is stored in a variable z.
-		- If z != 0, It displays an error.
-		- execvp takes the input command and the array of strings as arguments.
-		- execvp function calls the file from bin folder according to the user input.
-		- Meanwhile, the parent process waits for the child process to exit.
-                       
-- After leaving the if else loop and executing one of the Cd(), Pwd(), Echo(), Cmd() functions, the array a memory is freed.
-- Because we have a while loop in our Main function and it breaks only when character ch != '\n'.
-- At each step, it calls the shell function again.
-
-
-## Output Images :
-
-
-### cat, date commands
-
-![cat,date](https://user-images.githubusercontent.com/85508314/208363790-8ec1230a-253c-447b-a0a1-66e264c731a4.png)
-
-
-### cd command
-
-![cd](https://user-images.githubusercontent.com/85508314/208364013-62668cbb-6f9d-4f6f-aec1-f04ea5f400e7.png)
-
-
-### echo, pwd commands
-
-![echo,pwd](https://user-images.githubusercontent.com/85508314/208364073-0e444897-ff37-4a09-a9bd-64215e55bee3.png)
-
-
-### ls command
-
-![ls](https://user-images.githubusercontent.com/85508314/208364117-bb895734-e684-4b37-8394-8bc78c81ebb5.png)
-
-
-### mkdir command
-
-![mkdir](https://user-images.githubusercontent.com/85508314/208364161-f1ff1fb9-ee89-4c80-9871-3b4d4e9802d5.png)
-
-
-### rm command
-
-![rm](https://user-images.githubusercontent.com/85508314/208364190-c3c16281-7eef-4a7e-acea-2c5a41a1d9bf.png)
-
+<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/8098031e-be1a-43c3-9c99-f32f6dfb04be" width="450" alt="commands_1">
+<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/daac292d-25e7-4e2f-be2b-538baca8a945" width="450" alt="commands_2">
