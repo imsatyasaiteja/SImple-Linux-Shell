@@ -32,5 +32,5 @@ We need this loop to run the shell input command infinitely after execution of e
 ### Preview
 Here are some important Linux commands that I've tested on my Linux shell application
 
-<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/8098031e-be1a-43c3-9c99-f32f6dfb04be" width="450" alt="commands_1">
-<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/daac292d-25e7-4e2f-be2b-538baca8a945" width="450" alt="commands_2">
+<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/8098031e-be1a-43c3-9c99-f32f6dfb04be" width="400" alt="commands_1">
+<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/daac292d-25e7-4e2f-be2b-538baca8a945" width="400" alt="commands_2">
