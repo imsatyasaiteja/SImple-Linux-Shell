@@ -2,6 +2,12 @@
 
 Hey! Here's a Command Line Interface application I've written in C language that works like a Linux shell
 
+### Preview
+Here are some important Linux commands that I've tested on my Linux shell application
+
+<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/8098031e-be1a-43c3-9c99-f32f6dfb04be" width="400" alt="commands_1">
+<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/daac292d-25e7-4e2f-be2b-538baca8a945" width="400" alt="commands_2">
+
 ### Code Explanation
 - The _main( )_ function executes a _while_ loop
 We need this loop to run the shell input command infinitely after execution of each command
@@ -28,9 +34,3 @@ We need this loop to run the shell input command infinitely after execution of e
 - After leaving the _if-else_ loop and executing one of the _Cd( ), Pwd( ), Echo( ), Cmd( )_ functions, the array a memory is freed
 - Because we have a _while_ loop in our Main function and it breaks only when character _ch != '\n'_
 - At each step, it calls the shell function again
-
-### Preview
-Here are some important Linux commands that I've tested on my Linux shell application
-
-<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/8098031e-be1a-43c3-9c99-f32f6dfb04be" width="400" alt="commands_1">
-<img src="https://github.com/imsatyasaiteja/Simple-Linux-Shell/assets/85508314/daac292d-25e7-4e2f-be2b-538baca8a945" width="400" alt="commands_2">
